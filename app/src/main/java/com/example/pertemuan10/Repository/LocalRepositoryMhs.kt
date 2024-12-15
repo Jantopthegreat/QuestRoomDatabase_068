@@ -18,6 +18,14 @@ class LocalRepositoryMhs(private val mahasiswaDao: MahasiswaDao) : RepositoryMhs
         return mahasiswaDao.getMahasiswa(nim)
     }
 
+    override suspend fun deleteMahasiswa(mahasiswa: Mahasiswa) {
+        mahasiswaDao.deleteMahasiswa(mahasiswa)
+    }
+
+    override suspend fun updateMahasiswa(mahasiswa: Mahasiswa) {
+        mahasiswaDao.updateMahasiswa(mahasiswa)
+    }
+
 
 
 }
