@@ -11,6 +11,7 @@ import com.example.pertemuan10.Repository.RepositoryMhs
 import kotlinx.coroutines.launch
 import java.text.Normalizer.Form
 
+
 class MahasiswaViewModel (private  val repositoryMhs: RepositoryMhs):ViewModel() {
 
     var uiState by mutableStateOf(MhsUIState())
@@ -40,7 +41,7 @@ class MahasiswaViewModel (private  val repositoryMhs: RepositoryMhs):ViewModel()
         val currentEvent = uiState.mahasiswaEvent
 
         if (validateFields()){
-            viewModelScope.lauch{
+            viewModelScope.launch{
                 try {
                     repositoryMhs.insertMhs(currentEvent.toMahasiswaEntity())
                     uiState = uiState.copy(
