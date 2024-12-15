@@ -40,7 +40,7 @@ class MahasiswaViewModel (private  val repositoryMhs: RepositoryMhs):ViewModel()
         val currentEvent = uiState.mahasiswaEvent
 
         if (validateFields()){
-            viewModelScope.launch{
+            viewModelScope.lauch{
                 try {
                     repositoryMhs.insertMhs(currentEvent.toMahasiswaEntity())
                     uiState = uiState.copy(
