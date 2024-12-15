@@ -14,5 +14,10 @@ class LocalRepositoryMhs(private val mahasiswaDao: MahasiswaDao) : RepositoryMhs
         return mahasiswaDao.getAllMahasiswa()
     }
 
+    override fun getMahasiswa(nim: String): Flow<Mahasiswa> {
+        return mahasiswaDao.getMahasiswa(nim)
+    }
+
+
 
 }
