@@ -8,4 +8,6 @@ interface RepositoryMhs {
 
     fun getAllMhs(): Flow<List<Mahasiswa>>
 
+    fun getMhs(nim: String): Flow<Mahasiswa>
+
 }
