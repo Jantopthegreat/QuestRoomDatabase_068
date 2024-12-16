@@ -40,6 +40,7 @@ import com.example.pertemuan10.ui.viewmodel.PenyediaViewModel
 import com.example.pertemuan10.ui.viewmodel.toMahasiswaEntity
 
 
+
 @Composable
 fun DetailMhsView (
     modifier: Modifier = Modifier,
