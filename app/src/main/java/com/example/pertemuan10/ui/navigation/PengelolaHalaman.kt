@@ -10,6 +10,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import com.example.pertemuan10.ui.view.mahasiswa.DestinasiInsert
+import com.example.pertemuan10.ui.view.mahasiswa.DetailMhsView
 import com.example.pertemuan10.ui.view.mahasiswa.HomeMhsView
 import com.example.pertemuan10.ui.view.mahasiswa.insertMhsView
 
@@ -58,6 +59,23 @@ fun PengelolaHalaman(
                     type = NavType.StringType
                 }
             )
-        ){}
+        ){
+            val nim = it.arguments?.getString(DestinasiDetail.NIM)
+
+            nim?.let { nim ->
+                DetailMhsView(
+                    onBack = {
+                        navController.popBackStack()
+                    },
+                    onEditClick = {
+                        navController.navigate("${DestinasiUpdate.route}/$nim")
+                    },
+                    modifier = modifier,
+                    onDeleteClick = {
+                        navController.popBackStack()
+                    }
+                )
+            }
+        }
     }
 }
