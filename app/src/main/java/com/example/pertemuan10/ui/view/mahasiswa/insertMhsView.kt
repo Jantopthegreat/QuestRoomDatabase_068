@@ -202,9 +202,9 @@ fun FormMahasiswa(
     Row(modifier = Modifier.fillMaxWidth()) {
         kelas.forEach { kls ->
             RadioButton(
-                selected = mahasiswaEvent.jenisKelamin == kls,
+                selected = mahasiswaEvent.kelas == kls,
                 onClick = {
-                    onValueChange(mahasiswaEvent.copy(jenisKelamin = kls))
+                    onValueChange(mahasiswaEvent.copy(kelas = kls))
                 },
             )
             Text(
