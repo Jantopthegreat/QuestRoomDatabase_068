@@ -28,7 +28,7 @@ class UpdateMhsViewModel (
             updateUIState = repositoryMhs.getMahasiswa(_nim)
                 .filterNotNull()
                 .first()
-                .toUiStateMhs()
+                .toUIStateMhs()
         }
     }
 
@@ -86,6 +86,6 @@ class UpdateMhsViewModel (
         updateUIState = updateUIState.copy(snackBarMessage = null)
     }
 }
-fun Mahasiswa.toUIStateMhs () : MhsUiState = MhsUiState (
+fun Mahasiswa.toUIStateMhs () : MhsUIState = MhsUIState (
     mahasiswaEvent = this.toDetailUiEvent (),
 )
