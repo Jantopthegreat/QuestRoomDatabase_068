@@ -12,7 +12,7 @@ import com.example.pertemuan10.Data.Entity.Mahasiswa
 
 abstract class krsDatabase : RoomDatabase() {
 
-    abstract fun MahasiswaDao() : MahasiswaDao
+    abstract fun mahasiswaDao() : MahasiswaDao
 
     companion object{
         @Volatile //Memastikan bahwa nilai variable Instance selalu sama disemua
@@ -26,6 +26,7 @@ abstract class krsDatabase : RoomDatabase() {
                   "krsDatabase" //Nama Database
               )
                   .build().also { Instance = it }
+
             })
         }
 

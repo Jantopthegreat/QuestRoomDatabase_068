@@ -12,10 +12,10 @@ import kotlinx.coroutines.flow.Flow
 @Dao
 interface MahasiswaDao {
     @Insert
-    suspend fun insertMahasiswa(
-        mahasiswa: Mahasiswa
-    )
-        @Query("select * from mahasiswa")
+    suspend fun insertMahasiswa(mahasiswa: Mahasiswa)
+
+
+    @Query("select * from mahasiswa")
     fun getAllMahasiswa() : Flow<List<Mahasiswa>>
 
     @Query ("SELECT * FROM mahasiswa WHERE nim = :nim")

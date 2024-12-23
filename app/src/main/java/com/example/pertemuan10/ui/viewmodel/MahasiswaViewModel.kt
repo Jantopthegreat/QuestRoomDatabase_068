@@ -22,6 +22,7 @@ class MahasiswaViewModel (private  val repositoryMhs: RepositoryMhs):ViewModel()
         )
     }
 
+
     fun validateFields(): Boolean {
         val event = uiState.mahasiswaEvent
         val errorState = FormErrorState(
@@ -94,15 +95,14 @@ data class MhsUIState(
     val snackBarMessage: String? = null,
 )
 
-data class  MahasiswaEvent(
-    val nim: String = "",
-    val nama: String = "",
-    val jenisKelamin: String ="",
-    val alamat: String = "",
-    val kelas: String = "",
-    val angkatan: String = ""
-    )
-{}
+    data class  MahasiswaEvent(
+        val nim: String = "",
+        val nama: String = "",
+        val jenisKelamin: String ="",
+        val alamat: String = "",
+        val kelas: String = "",
+        val angkatan: String = ""
+        )
 
 
 fun MahasiswaEvent.toMahasiswaEntity(): Mahasiswa = Mahasiswa (

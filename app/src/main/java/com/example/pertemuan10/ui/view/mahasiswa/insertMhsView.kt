@@ -40,6 +40,7 @@ import kotlinx.coroutines.launch
 object  DestinasiInsert : AlamatNavigasi{
     override val route: String = "insert_mhs"
 }
+
 @Composable
 fun insertMhsView (
     onBack: () -> Unit,
